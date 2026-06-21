@@ -2,21 +2,17 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# Home Page
 @app.route("/")
 def home():
     return render_template("home.html")
 
 
-# Check Booking Details
 @app.route("/search", methods=["POST"])
 def search():
 
     name = request.form["name"]
     movie = request.form["movie"]
     tickets = int(request.form["tickets"])
-
-    price = 150
 
     if movie.lower() == "leo":
         show_time = "10:00 AM"
@@ -27,6 +23,7 @@ def search():
     else:
         show_time = "9:00 PM"
 
+    price = 150
     total = tickets * price
 
     return render_template(
@@ -39,7 +36,6 @@ def search():
     )
 
 
-# Confirm Booking
 @app.route("/confirm", methods=["POST"])
 def confirm():
 
