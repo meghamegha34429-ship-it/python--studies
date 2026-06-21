@@ -1,16 +1,36 @@
-<h1>Movie Ticket Booking System</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ticket Booking System</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        input { display: block; margin: 8px 0; padding: 8px; width: 250px; }
+        button { padding: 10px 20px; background: blue; color: white; border: none; cursor: pointer; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
 
-<form action="/book">
+    <h2>Movie Ticket Booking System</h2>
 
-    Customer Name:
-    <input type="text" name="name"><br><br>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
 
-    Movie Name:
-    <input type="text" name="movie"><br><br>
+    <form action="/search" method="POST">
 
-    Number of Tickets:
-    <input type="number" name="tickets"><br><br>
+        <label>Customer Name:</label>
+        <input type="text" name="name" placeholder="Enter your name">
 
-    <input type="submit" value="Book Ticket">
+        <label>Movie Name:</label>
+        <input type="text" name="movie" placeholder="Leo / GOAT / Vikram">
 
-</form>
+        <label>Number of Tickets:</label>
+        <input type="number" name="tickets" placeholder="Enter tickets">
+
+        <button type="submit">Book Ticket</button>
+
+    </form>
+
+</body>
+</html>
