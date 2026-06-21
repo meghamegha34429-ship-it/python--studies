@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmed</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        h2 { color: green; }
+        a { display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h2>Movie Ticket Booking Confirmed!</h2>
+
+    <p><b>Customer Name :</b> {{ name }}</p>
+    <p><b>Movie Name :</b> {{ movie }}</p>
+    <p><b>Number of Tickets :</b> {{ tickets }}</p>
+
+    <p><b>Show Time :</b> {{ show_time }}</p>
+    <p><b>Total Amount :</b> ₹{{ total }}</p>
+
+    <a href="/">Book Again</a>
+
+</body>
+</html>
