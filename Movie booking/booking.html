@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Booking Details</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        button { padding: 10px 20px; background: green; color: white; border: none; cursor: pointer; }
+        a { display: inline-block; margin-top: 10px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+    <h2>Movie Booking Details</h2>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <p><b>Customer Name :</b> {{ name }}</p>
+    <p><b>Movie Name :</b> {{ movie }}</p>
+    <p><b>Number of Tickets :</b> {{ tickets }}</p>
+
+    <p><b>Show Time :</b> {{ show_time }}</p>
+    <p><b>Total Amount :</b> ₹{{ total }}</p>
+
+    <form action="/confirm" method="POST">
+
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="hidden" name="movie" value="{{ movie }}">
+        <input type="hidden" name="tickets" value="{{ tickets }}">
+        <input type="hidden" name="show_time" value="{{ show_time }}">
+        <input type="hidden" name="total" value="{{ total }}">
+
+        <button type="submit">Confirm Booking</button>
+
+    </form>
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>
